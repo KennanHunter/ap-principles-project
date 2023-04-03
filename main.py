@@ -8,25 +8,23 @@ symbols = list(r"~!@#$%^&*()_-+=|\{}[];:\"'<,>.?/")
 input_options = ["letters", "numbers", "symbols"]
 
 
-def generate_characters(user_selection):
-    random_term_options = []
-
-    if "letters" in user_selection:
-        random_term_options.extend(letters)
-
-    if "numbers" in user_selection:
-        random_term_options.extend(numbers)
-
-    if "symbols" in user_selection:
-        random_term_options.extend(symbols)
-
-    return random.choice(random_term_options)
-
-
 def generate_password(user_selection: list[str], length):
     password = ""
+
     for _ in range(0, length):
-        password += generate_characters(user_selection)
+        random_term_options = []
+
+        if "letters" in user_selection:
+            random_term_options.extend(letters)
+
+        if "numbers" in user_selection:
+            random_term_options.extend(numbers)
+
+        if "symbols" in user_selection:
+            random_term_options.extend(symbols)
+
+        password += random.choice(user_selection)
+
     return password
 
 
@@ -53,5 +51,6 @@ def main():
         exit()
 
     print(generate_password(user_selection, user_length))
+
 
 main()

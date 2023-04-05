@@ -15,8 +15,8 @@ input_options = ["letters", "numbers", "symbols"]
 # Return a string with the given random
 # choice possibilities and length
 def generate_password(user_selection: list[str], length: int):
-    # Create an empty password string that will be added to later
-    password = ""
+    # Create an empty password as a list that will be added to later
+    password = []
 
     # Loop through a range with however many characters we want to produce
     for _ in range(0, length):
@@ -35,9 +35,9 @@ def generate_password(user_selection: list[str], length: int):
         if "symbols" in user_selection:
             random_term_options.extend(symbols)
 
-        password += random.choice(user_selection)
+        password.append(random.choice(random_term_options))
 
-    return password
+    return "".join(password)
 
 # Function that handles accepting user input and printing out the output
 def main():

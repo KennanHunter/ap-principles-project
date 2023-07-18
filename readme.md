@@ -1,5 +1,9 @@
 # My ap computer science principles project
 
+Final score 4/5, honestly kinda upset I didn't get a five, but hey whatever.
+
+Not sure exactly what I got on the exam, but practice exams put me near perfect.
+
 ## Written responses
 
 ### Describes the overall purpose of the program.
